@@ -1,0 +1,12 @@
+<div class="notification-container" *ngIf="notifications$ | async as notifications; else noNotifications">
+    <div *ngFor="let notification of notifications" class="notification success">
+      <p>{{ notification.description }}</p>
+      <small>{{ notification.createdAt | date:'short' }}</small>
+      <button class="close-btn" (click)="removeNotification(notification.id)">❌</button>
+    </div>
+  </div>
+  
+  <ng-template #noNotifications>
+    <p>No hay notificaciones.</p>
+  </ng-template>
+  

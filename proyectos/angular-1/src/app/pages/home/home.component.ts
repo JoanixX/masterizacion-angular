@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { NotificationService } from '../../services/notification.service';
+import { NotificationsComponent } from '../../shared/components/notifications/notifications.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NotificationsComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css'] // ✅ Corrección aquí
 })
-export class HomeComponent {
 
+export class HomeComponent {
+  constructor(private notificationService: NotificationService) {}
+
+  showNotification() {
+    this.notificationService.addNotification('¡Notificación de prueba!');
+  }
 }

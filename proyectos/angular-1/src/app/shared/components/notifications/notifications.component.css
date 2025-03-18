@@ -1,0 +1,32 @@
+.notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    z-index: 1000;
+  }
+  
+  .notification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .notification.success { background: green; }
+  .notification.error { background: red; }
+  .notification.info { background: blue; }
+  .notification.warning { background: orange; }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
