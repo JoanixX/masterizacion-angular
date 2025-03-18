@@ -3,13 +3,11 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
-  /* Logo */
   .logo {
     height: 40px;
     margin-right: 10px;
   }
   
-  /* Links del menú */
   .navbar-nav .nav-link {
     font-size: 1rem;
     padding: 10px 15px;
@@ -17,10 +15,9 @@
   }
   
   .navbar-nav .nav-link:hover {
-    color: #f8d210; /* Color resaltado */
+    color: #f8d210;
   }
   
-  /* Botones */
   .btn-outline-light {
     border-color: #f8f9fa;
     color: #f8f9fa;
@@ -40,7 +37,6 @@
     background-color: #0056b3;
   }
   
-  /* Select de idiomas */
   .form-select {
     width: 120px;
     font-size: 14px;

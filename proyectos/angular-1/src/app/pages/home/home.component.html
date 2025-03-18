@@ -1,5 +1,44 @@
-<p>home works!</p>
-<button (click)="showNotification()">Mostrar Notificación</button>
+<app-navbar-home></app-navbar-home>
 
-<!-- 🔹 Agregar el componente de notificaciones aquí -->
+<header class="hero-section text-center text-white">
+    <div class="container">
+      <h1 class="display-4 fw-bold">Análisis Financiero Inteligente</h1>
+      <p class="lead">Optimiza tus inversiones con datos en tiempo real y análisis avanzados.</p>
+      <button (click)="showNotification()" class="btn btn-light btn-lg mt-3">Recibir Notificaciones</button>
+    </div>
+  </header>
+  
+  <!-- Features Section -->
+  <section class="features py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Análisis de Mercado</h5>
+              <p class="card-text">Obtén datos en tiempo real sobre las acciones y criptomonedas más importantes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Notificaciones Inteligentes</h5>
+              <p class="card-text">Recibe alertas personalizadas basadas en tus inversiones y preferencias.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card feature-card">
+            <div class="card-body text-center">
+              <h5 class="card-title">Automatización de Estrategias</h5>
+              <p class="card-text">Configura estrategias de inversión automáticas basadas en tus objetivos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 <app-notifications></app-notifications>
+<app-footer></app-footer>

@@ -1,0 +1,18 @@
+.footer {
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #f8f9fa;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: #f8d210;
+}
