@@ -1,69 +1,103 @@
-/* Fondo con degradado */
+/* 🟢 Contenedor del login */
 .login-container {
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    background: rgb(33, 37, 41);
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    background: #212529;
     text-align: center;
     color: #ffffff;
-  }
-  
-  /* Título */
-  .login-container h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-  }
-  
-  /* Formularios */
-  .login-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-    text-align: left;
-  }
-  
-  .form-group label {
-    font-weight: bold;
+}
+
+/* 🟢 Mat-Form-Field: Se asegura de que los labels no se superpongan */
+mat-form-field {
+    width: 100%;
     display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
+    margin-bottom: 20px;  /* Espaciado entre los campos */
+    margin-top: 10px; /* Ajusta este valor según sea necesario */
+}
+
+/* 🔹 Forzar los labels a mantenerse arriba */
+mat-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #bdbdbd; /* Color gris claro */
+}
+
+/* 🔹 Ajustar los inputs para mayor visibilidad */
+input[matInput] {
+    background-color: #363b42; /* Color más claro, pero no blanco */
+    color: #ffffff; /* Texto en blanco */
+    padding: 14px;
     font-size: 16px;
-    background-color: #e6e6e6;
-    color: #203a43;
-  }
-  
-  .form-group input::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Botón */
-  button {
+    border-radius: 5px;
+}
+
+/* 🔹 Placeholder más visible */
+input[matInput]::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.mat-mdc-form-field-outline {
+    border-color: #3a3f44 !important;
+}
+
+mat-error {
+    font-size: 13px;
+    color: #969696;
+    margin-top: 4px;
+    display: block;  /* 🔹 Hace que el mensaje de error no empuje otros elementos */
+}
+
+/* 🔹 Espaciado extra entre inputs cuando hay error */
+mat-form-field.ng-invalid {
+    margin-bottom: 30px;
+}
+
+/* 🔹 Hover y foco en los inputs */
+input[matInput]:focus {
+    background-color: #3a3f44; /* Se aclara un poco más */
+}
+
+/* 🟢 Botón */
+button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     font-size: 16px;
     font-weight: bold;
-    background: #28a745; /* Color verde Bootstrap */
+    background: #28a745;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     color: white;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
-  }
-  
-  button:hover {
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
     background: #218838;
-  }
-  
+    transform: scale(1.02);
+}
+
+/* 🟢 Enlace de registro */
+.login-container a {
+    color: #17a2b8;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+    color: #138496;
+}
+
+.title{
+    margin-top: 10px;
+}
+
+p {
+    margin-top: 30px; /* 🔹 Separa el párrafo del form */
+}
+
