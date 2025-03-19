@@ -4,6 +4,7 @@ import { NotificationService } from '../../services/notification.service';
 import { NotificationsComponent } from '../../shared/components/notifications/notifications.component';
 import { NavbarHomeComponent } from '../../shared/components/navbar-home/navbar-home.component';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -18,5 +19,13 @@ export class HomeComponent {
 
   showNotification() {
     this.notificationService.addNotification('¡Notificación de prueba!');
+  }
+
+  goToLogin(){
+    window.location.href = '/auth/login';
+  }
+
+  goToRegister(){
+    window.location.href = '/auth/register';
   }
 }
