@@ -1,103 +1,122 @@
-/* 🟢 Contenedor del login */
+/* 🟢 Fondo más claro, pero no blanco */
 .login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f4f4f4; /* 🔹 Color gris claro */
+    color: #535353;
+}
+
+/* 🟢 Tarjeta de login */
+.login-card {
+    width: 85%;
     max-width: 450px;
-    margin: 100px auto;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    background: #212529;
+    box-shadow: 0 4px 12px rgba(255, 48, 48, 0.1);
+    background-color: #2a2929; /* 🔹 Fondo negro para el formulario */
     text-align: center;
-    color: #ffffff;
-}
-
-/* 🟢 Mat-Form-Field: Se asegura de que los labels no se superpongan */
-mat-form-field {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;  /* Espaciado entre los campos */
-    margin-top: 10px; /* Ajusta este valor según sea necesario */
-}
-
-/* 🔹 Forzar los labels a mantenerse arriba */
-mat-label {
-    font-size: 14px;
-    font-weight: bold;
-    color: #bdbdbd; /* Color gris claro */
-}
-
-/* 🔹 Ajustar los inputs para mayor visibilidad */
-input[matInput] {
-    background-color: #363b42; /* Color más claro, pero no blanco */
-    color: #ffffff; /* Texto en blanco */
-    padding: 14px;
-    font-size: 16px;
-    border-radius: 5px;
-}
-
-/* 🔹 Placeholder más visible */
-input[matInput]::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 14px;
-}
-
-.mat-mdc-form-field-outline {
-    border-color: #3a3f44 !important;
 }
 
 mat-error {
-    font-size: 13px;
-    color: #969696;
-    margin-top: 4px;
-    display: block;  /* 🔹 Hace que el mensaje de error no empuje otros elementos */
+    color: #828181;
 }
 
-/* 🔹 Espaciado extra entre inputs cuando hay error */
-mat-form-field.ng-invalid {
-    margin-bottom: 30px;
+mat-label {
+    color: #1abc9c; /* 🔹 Verde primario */
+    font-weight: bold;
+    margin-bottom: 10px; 
 }
 
-/* 🔹 Hover y foco en los inputs */
-input[matInput]:focus {
-    background-color: #3a3f44; /* Se aclara un poco más */
+/* 🟢 Encabezado */
+.title {
+    color: #1abc9c; /* 🔹 Verde primario */
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #828181;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* 🟢 Campos de entrada */
+.form-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Evitar superposición de labels */
+.mat-mdc-form-field {
+    width: 100%;
+    display: block;
+}
+
+.mat-mdc-form-field-infix {
+    min-height: 56px; /* 🔹 Evita que el label se superponga */
+    display: flex;
+    align-items: center;
+}
+
+/* 🔹 Asegurar mismo color en los inputs */
+input[matInput] {
+    background-color: #f4f4f4; /* 🔹 Misma base para ambos */
+    color: #333;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+input[matInput]::placeholder {
+    color: rgba(0, 0, 0, 0.6);
 }
 
 /* 🟢 Botón */
-button {
+.submit-button {
     width: 100%;
-    padding: 14px;
-    font-size: 16px;
+    padding: 12px;
+    font-size: 1.2rem;
     font-weight: bold;
-    background: #28a745;
+    background: #1abc9c;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     color: white;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
-button:hover {
-    background: #218838;
+.submit-button:hover {
+    background: #158467;
     transform: scale(1.02);
 }
 
 /* 🟢 Enlace de registro */
-.login-container a {
-    color: #17a2b8;
+.register-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #828181;
+}
+
+a {
+    color: #1abc9c;
     text-decoration: none;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.login-container a:hover {
+a:hover {
     text-decoration: underline;
-    color: #138496;
 }
 
-.title{
-    margin-top: 10px;
+/* 🟢 Responsivo */
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+        max-width: 400px;
+        padding: 30px;
+    }
 }
-
-p {
-    margin-top: 30px; /* 🔹 Separa el párrafo del form */
-}
-
