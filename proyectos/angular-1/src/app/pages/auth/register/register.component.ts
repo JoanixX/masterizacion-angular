@@ -5,7 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { RouterLink } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -17,16 +17,16 @@ import { RouterLink } from '@angular/router';
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    RouterLink,
+    RouterModule,
   ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-
   registerForm: FormGroup;
   private fb = inject(FormBuilder);
   private snackBar = inject(MatSnackBar);
+  private router = inject(Router);
 
   constructor() {
     this.registerForm = this.fb.group({
@@ -49,16 +49,21 @@ export class RegisterComponent {
     return this.registerForm.controls[controlName].hasError(error);
   }
 
-  onSubmit() {
-    if (this.registerForm.valid) {
-      console.log('Registro exitoso: ', this.registerForm.value);
-      this.openSnackBar('Registro exitoso');
-    }
-  }
-
   private passwordsMatchValidator(group: FormGroup) {
     const password = group.get('password')?.value;
     const confirmPassword = group.get('confirmPassword')?.value;
     return password === confirmPassword ? null : { match: true };
   }
+
+  onSubmit() {
+    if (this.registerForm.valid) {
+      const user = this.registerForm.value;
+
+      console.log('Registro exitoso: ', user);
+      this.openSnackBar('Registro exitoso');
+
+      this.router.navigate(['/auth/login']);
+    }
+  }
+
 }
