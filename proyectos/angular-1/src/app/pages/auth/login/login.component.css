@@ -1,39 +1,26 @@
-/* 🟢 Fondo más claro, pero no blanco */
+/* 🟢 Fondo del contenedor principal */
 .login-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    background-color: #f4f4f4; /* 🔹 Color gris claro */
-    color: #535353;
+    height: 100vh;
+    background-color: #f4f4f4;
 }
 
 /* 🟢 Tarjeta de login */
 .login-card {
-    width: 85%;
-    max-width: 450px;
-    padding: 40px;
+    background-color: #2a2929;
     border-radius: 12px;
+    padding: 40px;
     box-shadow: 0 4px 12px rgba(255, 48, 48, 0.1);
-    background-color: #2a2929; /* 🔹 Fondo negro para el formulario */
+    max-width: 450px;
+    width: 85%;
     text-align: center;
-}
-
-mat-error {
-    color: #828181;
-}
-
-mat-label {
-    color: #1abc9c; /* 🔹 Verde primario */
-    font-weight: bold;
-    margin-bottom: 10px; 
 }
 
 /* 🟢 Encabezado */
 .title {
-    color: #1abc9c; /* 🔹 Verde primario */
+    color: #1abc9c;
     font-weight: bold;
     font-size: 2rem;
     margin-bottom: 5px;
@@ -51,29 +38,53 @@ mat-label {
     margin-bottom: 20px;
 }
 
-/* 🔹 Evitar superposición de labels */
-.mat-mdc-form-field {
+mat-form-field {
     width: 100%;
-    display: block;
 }
 
-.mat-mdc-form-field-infix {
-    min-height: 56px; /* 🔹 Evita que el label se superponga */
-    display: flex;
-    align-items: center;
+/* 🔥 Borde verde siempre (Forzado) */
+.mat-mdc-form-field-outline, 
+.mat-mdc-form-field-outline-thick, 
+.mat-mdc-form-field-outline-start, 
+.mat-mdc-form-field-outline-end, 
+.mat-mdc-form-field-outline-notch {
+    border-color: #1abc9c !important;
+    border-width: 2px !important;
 }
 
-/* 🔹 Asegurar mismo color en los inputs */
+/* 🔥 Borde verde en modo enfocado (Forzado) */
+.mat-mdc-form-field.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-thick {
+    border-color: #1abc9c !important;
+}
+
+/* 🔥 Borde verde al pasar el ratón */
+.mat-mdc-form-field:hover .mat-mdc-form-field-outline-thick {
+    border-color: #1abc9c !important;
+}
+
+/* 🔥 Ajuste del texto en el input */
 input[matInput] {
-    background-color: #f4f4f4; /* 🔹 Misma base para ambos */
-    color: #333;
-    padding: 14px;
+    color: white !important;
     font-size: 16px;
-    border-radius: 15px;
+    background-color: transparent;
 }
 
+/* 🔥 Placeholder blanco */
 input[matInput]::placeholder {
-    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 🔥 Ajuste del Label */
+mat-label {
+    color: #1abc9c !important;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 🟢 Mensaje de error */
+mat-error {
+    color: #e53935;
+    font-size: 0.85rem;
 }
 
 /* 🟢 Botón */
@@ -110,13 +121,4 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-/* 🟢 Responsivo */
-@media (max-width: 768px) {
-    .login-card {
-        width: 90%;
-        max-width: 400px;
-        padding: 30px;
-    }
 }

@@ -1,0 +1,135 @@
+/* 🟢 Contenedor principal */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* 🟢 Tarjeta de registro */
+.register-card {
+    background-color: #2a2929;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 12px rgba(255, 48, 48, 0.1);
+    max-width: 450px;
+    width: 85%;
+    text-align: center;
+}
+
+/* 🟢 Título y subtítulo */
+.title {
+    color: #1abc9c;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #828181;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* 🟢 Formulario */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 🟢 Campos del formulario */
+.form-field {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+/* 🔥 Borde verde siempre (Forzado) */
+.mat-mdc-form-field-outline, 
+.mat-mdc-form-field-outline-thick, 
+.mat-mdc-form-field-outline-start, 
+.mat-mdc-form-field-outline-end, 
+.mat-mdc-form-field-outline-notch {
+    border-color: #1abc9c !important;
+    border-width: 2px !important;
+}
+
+/* 🔥 Borde verde en modo enfocado (Forzado) */
+.mat-mdc-form-field.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline-thick {
+    border-color: #1abc9c !important;
+}
+
+/* 🔥 Borde verde al pasar el ratón */
+.mat-mdc-form-field:hover .mat-mdc-form-field-outline-thick {
+    border-color: #1abc9c !important;
+}
+
+/* 🔥 Ajuste del texto en el input */
+input[matInput] {
+    color: white !important;
+    font-size: 16px;
+    background-color: transparent;
+}
+
+/* 🔥 Placeholder blanco */
+input[matInput]::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* 🔥 Ajuste del Label */
+mat-label {
+    color: #1abc9c !important;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 🟢 Mensaje de error */
+mat-error {
+    color: #e53935;
+    font-size: 0.85rem;
+}
+
+/* 🟢 Botón de registro */
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #1abc9c;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.submit-button:hover {
+    background: #158467;
+    transform: scale(1.02);
+}
+
+.submit-button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+}
+
+/* 🟢 Texto de registro */
+.register-text {
+    margin-top: 20px;
+    text-align: center;
+    color: #828181;
+}
+
+.register-text a {
+    color: #1abc9c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}

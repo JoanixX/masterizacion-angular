@@ -4,11 +4,11 @@
             <h2 class="title">Iniciar Sesión</h2>
             <p class="subtitle">Inicia sesión con tu cuenta existente</p>
 
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form" autocomplete="off">
                 <!-- Campo Email -->
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Email</mat-label>
-                    <input matInput formControlName="email" type="email" placeholder="Introduce el correo">
+                    <input matInput formControlName="email" type="email" placeholder="Introduce el correo" autocomplete="off">
                     @if(controlHasError('email', 'required')) {
                         <mat-error>El correo es obligatorio</mat-error>
                     }
@@ -20,7 +20,7 @@
                 <!-- Campo Contraseña -->
                 <mat-form-field appearance="outline" class="form-field">
                     <mat-label>Contraseña</mat-label>
-                    <input matInput formControlName="password" type="password" placeholder="Introduce tu contraseña">
+                    <input matInput formControlName="password" type="password" placeholder="Introduce tu contraseña" autocomplete="new-password">
                     @if(controlHasError('password', 'required')) {
                         <mat-error>La contraseña es obligatoria</mat-error>
                     }
